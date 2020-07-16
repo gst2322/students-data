@@ -1,0 +1,39 @@
+<div>
+  <table class="table-bordered" style="width: 900px;border: 1px solid black;">
+    <tr>
+      <h3>
+        Students Result Board
+      </h3>
+    </tr>
+    <tr>
+      <th>
+        Student Name
+      </th>
+      <th>
+        Roll Number
+      </th>
+      <th>
+        Total Marks
+      </th>
+      <th>
+        Status
+      </th>
+    </tr>
+    <tr *ngFor="let student of studentData | sortBy: 'asc':'name' "
+      [ngStyle]="{ 'color' : student.marks.Maths < 20 || student.marks.English < 20 || student.marks.Science < 20 ? 'red' : 'black'}">
+      <td>
+        {{ student.name | titlecase  }}
+      </td>
+      <td>
+        {{ student.rollNumber }}
+      </td>
+      <td>
+        {{ student.marks.Maths+student.marks.English+student.marks.Science }}
+      </td>
+      <td>
+        <p *ngIf="student.marks.Maths < 20 || student.marks.English < 20 || student.marks.Science < 20">Fail</p>
+        <p *ngIf="student.marks.Maths > 20 && student.marks.English > 20 && student.marks.Science > 20">Pass</p>
+      </td>
+    </tr>
+  </table>
+</div>

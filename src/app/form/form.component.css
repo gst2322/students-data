@@ -1,0 +1,9 @@
+.main{
+    margin: 0 10%;
+    background-color: lightblue;
+    width: 320px;
+}
+input{
+    height: 30px;
+    width: 300px;
+}

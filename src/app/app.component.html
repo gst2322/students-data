@@ -1,0 +1,8 @@
+<button class="btn_style" [ngStyle]="{ 'background-color' : showDataTab ? 'blue' : 'black' } " 
+(click)="showFormTab=false;showDataTab=true"> Data</button>
+<button class="btn_style" [ngStyle]="{ 'background-color' : showFormTab ? 'blue' : 'black' } "
+ (click)="showFormTab=true;showDataTab=false">Form</button>
+<app-students-list *ngIf="showDataTab"></app-students-list>
+<app-form *ngIf="showFormTab"></app-form>
+
+<router-outlet></router-outlet>
