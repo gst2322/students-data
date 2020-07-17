@@ -1,9 +1,33 @@
-.main{
-    margin: 0 10%;
-    background-color: lightblue;
-    width: 320px;
+.signup-form{
+    margin-left: 30px;
+    margin-top: 60px;
 }
-input{
-    height: 30px;
-    width: 300px;
-}
+  .conf-pd {
+    height: 40px;
+    text-transform: capitalize;
+  }
+  .error-div {
+    position: relative;
+    bottom: 10px;
+    left: 30px;
+  }
+  .form-item {
+    border-radius: 25px;
+    --border-radius: 25px;
+    margin-bottom: 15px;
+    border: 1px solid var(--ion-color-transperentglossyBgOne);
+   
+  }
+  .input-box {
+    height: 40px;
+    font-size: 14px;
+    width: 650px;
+  }
+  .error {
+    color: rgb(223, 62, 62);
+    font-size: var(--ion-font-size-eleven);
+  }
+  
+  .error1 {
+    color: rgb(75, 75, 75);
+  }

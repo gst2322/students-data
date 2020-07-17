@@ -1,12 +1,101 @@
-<div class="main">
-<h2>School Admission Form</h2>
-<form style="display: grid;">
-    <label>First Name :</label><input maxlength="20"  required type="text" placeholder="First Name">
-    <label>Second Name :</label><input maxlength="20" required type="text"  placeholder="Last Name">
-    <label>Class :</label><input type="text" required placeholder="Class Name">
-    <label>Year of Passing :</label><input required type="number" min="2017" placeholder="Enter Year of Pass">
-    <label>Percentage of marks :</label><input required type="number" placeholder="Enter Percentage of marks">
-    <input type="submit" style="margin-top:15px ;">
+
+<form class="signup-form" novalidate (ngSubmit)="signup()" [formGroup]="regForm">
+  <h2>Student Details Form</h2>
+  <div class="form-item">
+    <input placeholder="First Name" required type="text" class="input-box" [(ngModel)]="userData.firstName"
+      formControlName="firstName"
+      [class.error1]="!regForm.controls.firstName.valid && regForm.controls.firstName.dirty">
+  </div>
+  <div class="error-div" *ngIf="
+              (regForm.get('firstName').hasError('maxlength') ||
+              regForm.get('firstName').hasError('pattern') ||
+              regForm.get('firstName').hasError('required')) &&
+            regForm.get('firstName').touched
+          ">
+    <div class="error" *ngIf="regForm.get('firstName').hasError('required') && regForm.get('firstName').touched">
+      Must Enter First Name
+    </div>
+    <div class="error" *ngIf="regForm.get('firstName').hasError('maxlength') && regForm.get('firstName').touched">
+      First Name length should less then 20 letters
+    </div>
+    <div class="error" *ngIf="regForm.get('firstName').hasError('pattern') && regForm.get('firstName').touched">
+      Only text is allowed
+    </div>
+  </div>
+  <div class="form-item">
+    <input placeholder="Last Name" required type="text" class="input-box" [(ngModel)]="userData.lastName"
+      formControlName="lastName" [class.error1]="!regForm.controls.lastName.valid && regForm.controls.lastName.dirty">
+  </div>
+  <div class="error-div" *ngIf="
+              (regForm.get('lastName').hasError('maxlength') ||
+              regForm.get('lastName').hasError('pattern') ||
+              regForm.get('lastName').hasError('required')) &&
+            regForm.get('lastName').touched
+          ">
+    <div class="error" *ngIf="regForm.get('lastName').hasError('required') && regForm.get('lastName').touched">
+      Must Enter Last Name
+    </div>
+    <div class="error" *ngIf="regForm.get('lastName').hasError('maxlength') && regForm.get('lastName').touched">
+      Last Name length should less then 20 letters
+    </div>
+    <div class="error" *ngIf="regForm.get('lastName').hasError('pattern') && regForm.get('lastName').touched">
+      Only text is allowed
+    </div>
+  </div>
+
+  <div class="form-item">
+    <input placeholder="Class" required type="text" class="input-box" [(ngModel)]="userData.class"
+      formControlName="class" [class.error1]="!regForm.controls.class.valid && regForm.controls.class.dirty">
+  </div>
+  <div class="error-div" *ngIf="
+              (regForm.get('class').hasError('pattern') ||
+                regForm.get('class').hasError('required')) &&
+            regForm.get('class').touched
+          ">
+    <div class="error" *ngIf="regForm.get('class').hasError('required') && regForm.get('class').touched">
+      Must Enter Class
+    </div>
+    <div class="error" *ngIf="regForm.get('class').hasError('pattern') && regForm.get('class').touched">
+      Special chars not allowed
+    </div>
+  </div>
+
+  <div class="form-item">
+    <input placeholder="Year of pass" required  min="2017" class="input-box" [(ngModel)]="userData.passYear"
+      formControlName="passYear" [class.error1]="!regForm.controls.passYear.valid && regForm.controls.passYear.dirty">
+  </div>
+  <div class="error-div" *ngIf="
+              (regForm.get('passYear').hasError('pattern') ||
+                regForm.get('passYear').hasError('required')) &&
+            regForm.get('passYear').touched
+          ">
+    <div class="error" *ngIf="regForm.get('passYear').hasError('required') && regForm.get('passYear').touched">
+      Must Enter Pass Year
+    </div>
+    <div class="error" *ngIf="regForm.get('passYear').hasError('pattern') && regForm.get('passYear').touched">
+      only numbers allowed
+    </div>
+  </div>
+
+  <div class="form-item">
+    <input placeholder="percentage" required class="input-box" [(ngModel)]="userData.percentage"
+      formControlName="percentage" [class.error1]="!regForm.controls.percentage.valid && regForm.controls.percentage.dirty">
+  </div>
+  <div class="error-div" *ngIf="
+              (regForm.get('percentage').hasError('pattern') ||
+                regForm.get('percentage').hasError('required')) &&
+            regForm.get('percentage').touched
+          ">
+    <div class="error" *ngIf="regForm.get('percentage').hasError('required') && regForm.get('percentage').touched">
+      Must Enter percentage
+    </div>
+    <div class="error" *ngIf="regForm.get('percentage').hasError('pattern') && regForm.get('percentage').touched">
+      only number alloweds
+    </div>
+  </div>
+
+       <button class="conf-pd" [disabled]="regForm.invalid"
+       type="submit">Submit.</button>
+
 
 </form>
-</div>

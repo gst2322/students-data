@@ -1,7 +1,65 @@
-td,th{
-    border: 1px gray solid;
-    text-align: center;
-}
-table{
+
+table,h3{
     margin-top: 15px;
+    margin-left: 25px;
+    width: 1200px;
 }
+/* 
+<!-- <div class="main">
+<h2>School Admission Form</h2>
+<form style="display: grid;">
+    <label>First Name :</label><input maxlength="20"  required type="text" placeholder="First Name">
+    <label>Second Name :</label><input maxlength="20" required type="text"  placeholder="Last Name">
+    <label>Class :</label><input type="text" required placeholder="Class Name">
+    <label>Year of Passing :</label><input required type="number" min="2017" placeholder="Enter Year of Pass">
+    <label>Percentage of marks :</label><input required type="number" placeholder="Enter Percentage of marks">
+    <input type="submit" style="margin-top:15px ;">
+
+</form>
+</div> -->
+ <!-- <form #contactForm="ngForm" (ngSubmit)="submit(contactForm.value)">
+   
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input required   maxlength="20" ngModel name="firstName" type="text" #firstName="ngModel" class="form-control" >
+        <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+            <div *ngIf="firstName.errors.required">First Name is required.</div>
+            <div *ngIf="firstName.errors.maxlength">First Name is maximum 20 character.</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input required  maxlength="20" ngModel name="lastName" type="text" #secondName="ngModel" class="form-control">
+        <div class="alert alert-danger" *ngIf="secondName.touched && !secondName.valid">
+            <div *ngIf="firstName.errors.required">Last Name is required.</div>
+            <div *ngIf="firstName.errors.maxlength">Last Name is maximum 20 character.</div>
+        </div>
+    </div>
+     
+  
+    <div class="form-group">
+        <label for="class">Class</label>
+        <input required ngModel name="class" type="text" #class="ngModel" class="form-control">
+        <div class="alert alert-danger" *ngIf="class.touched && !class.valid">
+            <div *ngIf="class.errors.required">Class is required.</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="year">Year of Pass</label>
+        <input required ngModel name="year" type="number" min="2017" #year="ngModel" class="form-control">
+        <div class="alert alert-danger" *ngIf="year.touched && !year.valid">
+            <div *ngIf="year.errors.required">Pass Year is required.</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Percentage">Percentage</label>
+        <input required ngModel name="Percentage" type="text" #Percentage="ngModel" class="form-control">
+        <div class="alert alert-danger" *ngIf="Percentage.touched && !Percentage.valid">
+            <div *ngIf="Percentage.errors.required">Percentage is required.</div>
+        </div>
+    </div>
+  
+     
+    <button class="btn btn-primary" type="submit" [class.disabled]="!contactForm.valid">Submit</button>
+    
+  </form>  --> */
