@@ -1,5 +1,5 @@
 
-<form class="signup-form" novalidate (ngSubmit)="signup()" [formGroup]="regForm">
+<form class="signup-form"  (ngSubmit)="signup()" [formGroup]="regForm">
   <h2>Student Details Form</h2>
   <div class="form-item">
     <input placeholder="First Name" required type="text" class="input-box" [(ngModel)]="userData.firstName"
@@ -70,7 +70,7 @@
             regForm.get('passYear').touched
           ">
     <div class="error" *ngIf="regForm.get('passYear').hasError('required') && regForm.get('passYear').touched">
-      Must Enter Pass Year
+      Must Enter Pass Year After 2017
     </div>
     <div class="error" *ngIf="regForm.get('passYear').hasError('pattern') && regForm.get('passYear').touched">
       only numbers allowed
@@ -90,7 +90,7 @@
       Must Enter percentage
     </div>
     <div class="error" *ngIf="regForm.get('percentage').hasError('pattern') && regForm.get('percentage').touched">
-      only number alloweds
+      only two numbers are allowed
     </div>
   </div>
 
